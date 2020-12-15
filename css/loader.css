@@ -1,12 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
 .loader {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
 }
 
 svg.tea {
-    --secondary: #33406f;
+    --secondary: #421908;
+    padding-bottom: 10px;
 }
 
 svg.tea #teabag {
@@ -29,6 +34,7 @@ svg.tea #steamR {
 
 .loading-text {
     font-size: 16px;
+    color: #ce8b5c;
 }
 
 .loading-text::after {
@@ -37,6 +43,12 @@ svg.tea #steamR {
     vertical-align: bottom;
     animation: dots steps(4, end) 2s infinite;
     width: 0px;
+}
+
+.initial .header {
+  font-size: 32px;
+  font-family: 'Roboto', sans-serif;
+  opacity: 0;
 }
 
 @-moz-keyframes swing {

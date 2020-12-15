@@ -1,7 +1,7 @@
 // variables
-var body = document.querySelector('.hide-scroll');
 var loader = document.querySelector('.loader');
 var header = document.querySelector('.header');
+var nve150 = -150
 
 var teaMojs = new mojs.Html({
     el: ".tea",
@@ -21,19 +21,12 @@ var headerStartMojs = new mojs.Html({
     duration: 500
 })
 
-// var typed = new Typed(".typed", {
-//     strings: [
-//         "Hello",
-//         "This is my page"
-//     ],
-//     smartBackspace: true,
-//     typeSpeed: 100,
-//     backSpeed: 100,
-//     showCursor: true,
-//     cursorChar: "_"
-// })
+var navMojs = new mojs.Html({
+    el: ".nav",
+    x: { 0: 150 },
+    duration: 500
+})
 
-// init
 function init() {
     setTimeout(() => {
         teaMojs.play()
@@ -42,8 +35,8 @@ function init() {
     }, 1800);
     setTimeout(() => {
         headerStartMojs.play()
+        navMojs.play()
         unfade(header)
-        body.style.overflowY = 'scroll'
     }, 3300);
 }
 
@@ -75,6 +68,4 @@ function unfade(element) {
 }
 
 init();
-ScrollReveal().reveal('.second', { duration: 3000, distance: '100px', origin: 'left' })
-ScrollReveal().reveal('.third', { duration: 3000, distance: '100px', origin: 'left' })
 
