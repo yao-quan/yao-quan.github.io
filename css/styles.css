@@ -14,8 +14,13 @@
     transition: all 500ms ease-out;
     -webkit-transition: all 500ms ease-out;
 }
+
+body {
+    margin: 0;
+    padding: 0;
+}
   
-html, body, section, .page {
+section, .page {
     font-family: 'Roboto', sans-serif;
     width: 100%;
     height: 100%;
@@ -25,10 +30,6 @@ html, body, section, .page {
     -webkit-transition: all 1s cubic-bezier(.5, -0.005, 0.2, 1) !important;
     color: var(--mocha);
     overflow: hidden;
-}
-  
-section {
-    width:400%;  
 }
   
 .page {
@@ -46,6 +47,35 @@ section {
 
 .initial {
     background: var(--cream);
+}
+
+.initial .header{
+    font-size: 32px;
+    opacity: 0;
+    visibility: hidden;
+
+    animation-name: fadeIn, appear;
+    animation-duration: 1s, 0.1s;
+    animation-delay: 3.3s, 3s;
+    animation-timing-function: ease-in-out, linear;
+    animation-fill-mode: forwards, forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    } 
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+  
+@keyframes appear {
+    to {
+        visibility: visible;
+    }
 }
 
 .showcase .header {
@@ -81,11 +111,6 @@ section {
     left: 300%;
     background: var(--caramel);
 }
-  
-ul {
-   position: fixed; 
-   z-index: 1;
-}
 
 #section1:target .page#p1 {
       transform: translateX(0);
@@ -107,77 +132,173 @@ ul {
     filter: blur(3px);
 }
   
-.icon {
-    color: var(--mocha);
-    font-size: 32px;
-    display: block;
-}
   
-ul .icon:hover {
-    opacity: 0.6;
-}
-  
-#p1 .icon .title {
-    margin-bottom: 20px;
-}
-  
-#section2:target ul .icon,
-#section3:target ul .icon,
-#section4:target ul .icon {
-    transform: scale(.6); 
-    transition-delay: .25s;
-}
-  
-#section2:target #second {
-    transform: scale(1.2) !important;
-}
-  
-#section3:target #third {
-    transform: scale(1.2) !important;
-}
-  
-#section4:target #fourth {
-    transform: scale(1.2) !important;
-}
-  
-ul {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: -150px;
-    /*right: 0;*/
-    margin: auto;
-    height: 280px;
-    width: 10%;
-    padding: 0;
-    text-align: center;
-}
-  
-ul li {
-    margin: 30px 0;
-}
-  
-a {
-    text-decoration: none;
-    font-family: open sans, sans-serif;
+@media only screen and (min-width: 950px) {
+    
+    .nav-section {
+        height: 100vh;
+        width: 10%;
+    }
+
+    .icon {
+        color: var(--mocha);
+        font-size: 32px;
+        display: block;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .icon .link-text {
+        font-family: 'Roboto', sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    
+    .icon:hover .link-text {
+        opacity: 1;
+        transform: translateY(10px);
+    }
+      
+    ul .icon:hover {
+        opacity: 0.6;
+    }
+      
+    #section2:target ul .icon,
+    #section3:target ul .icon,
+    #section4:target ul .icon {
+        transform: scale(.6); 
+        transition-delay: .25s;
+    }
+      
+    #section2:target #second {
+        transform: scale(1.2) !important;
+    }
+      
+    #section3:target #third {
+        transform: scale(1.2) !important;
+    }
+      
+    #section4:target #fourth {
+        transform: scale(1.2) !important;
+    }
+      
+    ul {
+        position: fixed; 
+        z-index: 1;
+        top: 0;
+        bottom: 0;
+        left: -150px;
+        margin: auto;
+        height: 280px;
+        width: 10%;
+        padding: 0;
+        text-align: center;
+    }
+
+    .nav {
+        animation-name: moveRight;
+        animation-duration: 1s;
+        animation-delay: 3.3s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: 1;
+        animation-fill-mode: both;
+    }
+
+    @keyframes moveRight {
+        0% {
+            left: -150px;
+        } 
+        100% {
+            left: 0px;
+        }
+    }
+          
+    ul li {
+        margin: 30px 0;
+    }
+      
+    a {
+        text-decoration: none;
+    }
+
 }
 
-/* use these to delay the reveal of divs in each page */
-#section2:target .page#p2 .header {
-    transform: translateX(0) !important;
-    transition-delay: 0.3s;
+@media only screen and (max-width: 950px) {
+
+    .nav-section {
+        height: 100vh;
+        width: 100vw;
+    }
+
+    .icon {
+        color: var(--mocha);
+        font-size: 32px;
+        display: block;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .icon .link-text {
+        font-family: 'Roboto', sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    
+    .icon:hover .link-text {
+        opacity: 1;
+        transform: translateY(10px);
+    }
+      
+    ul .icon:hover {
+        opacity: 0.6;
+    }
+      
+    #section2:target ul .icon,
+    #section3:target ul .icon,
+    #section4:target ul .icon {
+        transform: scale(.6); 
+        transition-delay: .25s;
+    }
+      
+    #section2:target #second {
+        transform: scale(1.2) !important;
+    }
+      
+    #section3:target #third {
+        transform: scale(1.2) !important;
+    }
+      
+    #section4:target #fourth {
+        transform: scale(1.2) !important;
+    }
+
+    ul {
+        position: fixed;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        z-index: 1;
+        bottom: 0px;
+        left: 0;
+        width: 100%;
+        height: 10vh;
+        padding: 0;
+        padding-bottom: 20px;
+        text-align: center;
+    }
+      
+    ul li {
+        margin: 30px 0;  
+        padding: 0px 10px;  
+    }
+      
+    a {
+        text-decoration: none;
+        font-family: open sans, sans-serif;
+    }
+
 }
-  
-#section3:target .page#p3 .container {
-    transform: translateX(0) !important;
-    transition-delay: 1s;
-}
-  
-#section4:target .page#p4 .container {
-    transform: translateX(0) !important;
-    transition-delay: 1s;
-}
-  
-  
-  
-  

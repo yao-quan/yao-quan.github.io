@@ -7,6 +7,29 @@
     align-items: center;
     font-family: 'Roboto', sans-serif;
     width: 100%;
+
+    animation-name: fadeOut, disappear;
+    animation-duration: 1s, 0.1s;
+    animation-delay: 2s, 3.1s;
+    animation-timing-function: ease-in, linear;
+    animation-fill-mode: forwards, forwards;
+}
+
+@keyframes fadeOut {
+  0% {
+      opacity: 1;
+      transform: translateY(0px);
+  } 
+  100% {
+      opacity: 0;
+      transform: translateY(-100px);
+  }
+}
+
+@keyframes disappear {
+  to {
+      height: 0;
+  }
 }
 
 svg.tea {
@@ -43,12 +66,6 @@ svg.tea #steamR {
     vertical-align: bottom;
     animation: dots steps(4, end) 2s infinite;
     width: 0px;
-}
-
-.initial .header {
-  font-size: 32px;
-  font-family: 'Roboto', sans-serif;
-  opacity: 0;
 }
 
 @-moz-keyframes swing {
