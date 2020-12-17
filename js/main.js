@@ -1,6 +1,7 @@
 // // variables
-// var loader = document.querySelector('.loader');
-// var header = document.querySelector('.header');
+// var loader = document.querySelector('.loader')
+// var header = document.querySelector('.header')
+// var nav = document.querySelector('.nav')
 
 // const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
 // const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
@@ -13,19 +14,19 @@
 
 // var textMojs = new mojs.Html({
 //     el: ".loading-text",
-//     x: { 0: -100 },
+//     y: { 0: -100 },
 //     duration: 1800
 // })
 
 // var headerStartMojs = new mojs.Html({
 //     el: ".header",
-//     y: { 100: 0 },
+//     y: { 150: 0 },
 //     duration: 500
 // })
 
 // var navMojs = new mojs.Html({
 //     el: ".nav",
-//     x: { 0: 150 },
+//     y: { 0: -150 },
 //     duration: 500
 // })
 
@@ -45,6 +46,7 @@
 //         headerStartMojs.play()
 //         if (vw > 950) {
 //             navMojs.play()
+//             unfade(nav)
 //         } else {
 //             navMobileMojs.play()
 //         }
