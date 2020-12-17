@@ -15,12 +15,8 @@
     -webkit-transition: all 500ms ease-out;
 }
 
-body {
-    margin: 0;
-    padding: 0;
-}
-  
-section, .page {
+
+html, body, section, .page {
     font-family: 'Roboto', sans-serif;
     width: 100%;
     height: 100%;
@@ -32,11 +28,16 @@ section, .page {
     overflow: hidden;
 }
 
+.section {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
 /* NAV START */
 .icon {
     color: var(--mocha);
     font-size: 32px;
-    display: block;
     display: flex;
     flex-direction: column;
 }
@@ -186,7 +187,7 @@ a {
 @media only screen and (min-width: 950px) {
     
     .nav-section {
-        height: 100vh;
+        height: 100%;
         width: 10%;
         display: flex;
         flex-direction: column;
@@ -228,8 +229,8 @@ a {
 @media only screen and (max-width: 950px) {
 
     .nav-section {
-        height: 100vh;
-        width: 100vw;
+        height: 100%;
+        width: 100%;
     }
 
     ul {
