@@ -65,17 +65,37 @@ ul .icon:hover {
     transform: scale(.6); 
     transition-delay: .25s;
 }
+
+#section1:target ul .icon #text-one {
+    opacity: 1;
+    transform: translateY(10px) !important;
+}
   
 #section2:target #second {
     transform: scale(1.2) !important;
+}
+
+#section2:target ul .icon #text-two {
+    opacity: 1;
+    transform: translateY(10px) !important;
 }
   
 #section3:target #third {
     transform: scale(1.2) !important;
 }
+
+#section3:target ul .icon #text-three {
+    opacity: 1;
+    transform: translateY(10px) !important;
+}
   
 #section4:target #fourth {
     transform: scale(1.2) !important;
+}
+
+#section4:target ul .icon #text-four {
+    opacity: 1;
+    transform: translateY(10px) !important;
 }
       
 ul li {
@@ -101,16 +121,13 @@ a {
     height: 100%;
     width: 100%;
 }
-  
+
 #p1 {
     left: 0;
-}
-
-.initial {
     background: var(--cream);
 }
 
-.initial .header{
+.initial .header {
     font-size: 32px;
     opacity: 0;
     visibility: hidden;
