@@ -3,7 +3,6 @@
 .page#p0 {
   left: 0;
   z-index: 100;
-
   background-color: var(--cream);
   animation-name: fadeOut, disappear;
   animation-duration: 1s, 0.1s;
