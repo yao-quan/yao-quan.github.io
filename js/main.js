@@ -1,87 +1,53 @@
-// // variables
-// var loader = document.querySelector('.loader')
-// var header = document.querySelector('.header')
-// var nav = document.querySelector('.nav')
+const tl = gsap.timeline({ defaults: { ease: "power2.out" } })
 
-const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
-const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
+// loading page
+tl.to(".loader", { y: -150, opacity: 0, duration: 1, delay: 1 })
+tl.to(".page#p0", { opacity: 0, duration: 0.1 })
+tl.to(".loader", { height: 0, zIndex: -100, duration: 0.1, delay: 0.2 })
+tl.to(".page#p0", { height: 0, zIndex: -100, duration: 0.1, delay: 0.2 })
 
-// var teaMojs = new mojs.Html({
-//     el: ".tea",
-//     y: { 0: -100 },
-//     duration: 1800
-// })
+// initial-header
+tl.from("#initial-header", { y: "100px", opacity: 0 })
+tl.to("#initial-header", { y: "0", opacity: 1, duration: 2 })
 
-// var textMojs = new mojs.Html({
-//     el: ".loading-text",
-//     y: { 0: -100 },
-//     duration: 1800
-// })
 
-// var headerStartMojs = new mojs.Html({
-//     el: ".header",
-//     y: { 150: 0 },
-//     duration: 500
-// })
 
-// var navMojs = new mojs.Html({
-//     el: ".nav",
-//     y: { 0: -150 },
-//     duration: 500
-// })
+// .page#p0
+// animation-name: fadeOut, disappear;
+// animation-duration: 1s, 0.1s;
+// animation-delay: 2s, 3.1s;
+// animation-timing-function: ease-in, linear;
+// animation-fill-mode: forwards, forwards;
 
-// var navMobileMojs = new mojs.Html({
-//     el: ".nav",
-//     y: { 0: -150 },
-//     duration: 500
-// })
+// .loader
 
-// function init() {
-//     setTimeout(() => {
-//         teaMojs.play()
-//         textMojs.play()
-//         fade(loader)
-//     }, 1800);
-//     setTimeout(() => {
-//         headerStartMojs.play()
-//         if (vw > 950) {
-//             navMojs.play()
-//             unfade(nav)
-//         } else {
-//             navMobileMojs.play()
-//         }
-//         unfade(header)
-//     }, 3300);
-// }
+// animation-name: slideUp, disappear;
+// animation-duration: 1s, 0.1s;
+// animation-delay: 2s, 3.1s;
+// animation-timing-function: ease-in, linear;
+// animation-fill-mode: forwards, forwards;
 
-// //functions
-// function fade(element) {
-//     var op = 1;  // initial opacity
-//     var timer = setInterval(function () {
-//         if (op <= 0.1) {
-//             clearInterval(timer);
-//             element.style.display = 'none';
-//         }
-//         element.style.opacity = op;
-//         element.style.filter = 'alpha(opacity=' + op * 100 + ")";
-//         op -= op * 0.1;
-//     }, 50);
-// }
+// @keyframes fadeOut {
+//     0% {
+//         opacity: 1;
+//     } 
+//     100% {
+//         opacity: 0;
+//     }
+//   }
 
-// function unfade(element) {
-//     var op = 0.1;  // initial opacity
-//     element.style.display = 'block';
-//     var timer = setInterval(function () {
-//         if (op >= 1) {
-//             clearInterval(timer);
-//         }
-//         element.style.opacity = op;
-//         element.style.filter = 'alpha(opacity=' + op * 100 + ")";
-//         op += op * 0.1;
-//     }, 10);
-// }
+//   @keyframes slideUp {
+//     0% {
+//         transform: translateY(0);
+//     } 
+//     100% {
+//         transform: translateY(-150px);
+//     }
+//   }
 
-// init();
-
-console.log(vw)
-console.log(vh)
+//   @keyframes disappear {
+//     to {
+//         height: 0;
+//         z-index: -100;
+//     }
+//   }
