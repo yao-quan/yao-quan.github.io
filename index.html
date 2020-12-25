@@ -19,26 +19,30 @@
             <div class="section" id="section3">
                 <div class="section" id="section4">
                     <section class="nav-section">
+
+                        <!-- NavBar Start -->
                         <ul class="nav">
                             <a href="#section1">
-                                <li class="icon fal fa-home" id="initial"><span class="link-text"
+                                <li class="icon fal fa-home" id="first"><span class="link-text"
                                         id="text-one">Home</span></li>
                             </a>
                             <a href="#section2">
-                                <li class="icon fal fa-books" id="second"><span class="link-text"
-                                        id="text-two">Projects</span></li>
+                                <li class="icon fal fa-books" id="second" onclick="showcase_func()"><span
+                                        class="link-text" id="text-two">Projects</span></li>
                             </a>
                             <a href="#section3">
-                                <li class="icon fal fa-code" id="third"><span class="link-text"
+                                <li class="icon fal fa-code" id="third" onclick="skills_func()"><span class="link-text"
                                         id="text-three">Skills</span></li>
                             </a>
                             <a href="#section4">
-                                <li class="icon fal fa-address-card" id="fourth"><span class="link-text"
-                                        id="text-four">About</span>
+                                <li class="icon fal fa-address-card" id="fourth" onclick="about_func()"><span
+                                        class="link-text" id="text-four">About</span>
                                 </li>
                             </a>
                         </ul>
+                        <!-- NavBar End -->
 
+                        <!-- Loading Page Start -->
                         <div class="page" id="p0">
                             <section class="loading container">
                                 <div class="loader">
@@ -66,30 +70,49 @@
                                 </div>
                             </section>
                         </div>
+                        <!-- Loading Page End -->
+
+                        <!-- Initial Page Start -->
                         <div class="page" id="p1">
                             <section class="initial container">
-                                <h1 class="header" id="initial-header">
+                                <h1 class="initial header" id="initial-header">
                                     Hello
                                 </h1>
+                                <div class="initial content">
+                                    <h1 class="initial text" id="initial-text"></h1>
+                                    <input type="text" class="initial input" id="initial-input">
+                                </div>
+
                             </section>
                         </div>
+                        <!-- Initial Page End -->
+
+                        <!-- Showcase Page Start -->
                         <div class="page" id="p2">
                             <section class="showcase container">
-                                <h1 class="header" id="showcase-header">
+                                <span class="header" id="showcase-header">
                                     Showcase
-                                </h1>
+                                </span>
                             </section>
                         </div>
+                        <!-- Showcase Page End -->
+
+                        <!-- Skills Page Start -->
                         <div class="page" id="p3">
                             <section class="skills container">
                                 Skills
                             </section>
                         </div>
+                        <!-- Skills Page End -->
+
+                        <!-- About Page Start -->
                         <div class="page" id="p4">
                             <section class="about container">
                                 About
                             </section>
                         </div>
+                        <!-- About Page End -->
+
                     </section>
 
                 </div>
@@ -97,11 +120,21 @@
         </div>
     </div>
 
+    <!-- Scripts Start -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"
         integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ=="
-        crossorigin="anonymous">
-        </script>
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+        integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/nanogallery2/3.0.4/jquery.nanogallery2.min.js"
+        integrity="sha512-+Ijx/x+ScQCzLAAbLCL2pbFo8pWdy5YfBHPLJy1CYBt4RSLyo2tr8dnxY1XMug6WCtEhGDreTMTHe+9BHOg2VA=="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"
+        integrity="sha512-BdHyGtczsUoFcEma+MfXc71KJLv/cd+sUsUaYYf2mXpfG/PtBjNXsPo78+rxWjscxUYN2Qr2+DbeGGiJx81ifg=="
+        crossorigin="anonymous"></script>
     <script src="../js/main.js"></script>
+    <!-- Scripts End -->
 
 </body>
 
