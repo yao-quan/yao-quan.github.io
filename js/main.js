@@ -10,9 +10,10 @@ const about = document.querySelector('#fourth')
 
 // variables
 const initial_tl = gsap.timeline({ defaults: { ease: "power2.out" } })
+const input_listener = $('#initial-input')
 
 function home_func() {
-    var typed = new Typed('#initial-text', {
+    var typed = new Typed('#initial-input', {
         strings: [
             'I\'m Yao Quan',
             "Student/Wannabe Web Developer",
@@ -22,7 +23,9 @@ function home_func() {
         typeSpeed: 30,
         backDelay: 1500,
         backSpeed: 10,
-        loop: false,
+        attr: 'placeholder',
+        bindInputFocusEvents: true,
+        loop: true,
         showCursor: false
     })
 }
@@ -43,12 +46,46 @@ function loading_animation() {
         console.log(vw)
         initial_tl.from(".nav", { x: "-100px", opacity: 0 }, "initial-header+=0")
         initial_tl.to(".nav", { x: "0px", opacity: 1, duration: 2 })
-        initial_tl.add(home_func(), "initial-header+=4")
     } else {
         initial_tl.from(".nav", { y: "100px", opacity: 0 }, "initial-header+=0")
         initial_tl.to(".nav", { y: "0px", opacity: 1, duration: 2 })
     }
 
+    initial_tl.add(home_func())
+    input_listener.on('keyup', ({ key }) => {
+        if (key === 'Enter') {
+            console.log(input_listener.val())
+            input_listener.css('color', 'transparent');
+            var temp = input_listener.val()
+            setTimeout(function () {
+                input_listener.val('')
+                input_listener.css('color', 'var(--mocha)');
+            }, 500);
+
+            reply(temp)
+        }
+    })
+
+}
+
+function fadeText(obj) {
+    obj.css('color', 'transparent')
+}
+
+function reply(input) {
+
+
+    var typed = new Typed('#initial-reply', {
+        strings: [
+            input
+        ],
+        typeSpeed: 50,
+        backDelay: 1500,
+        backSpeed: 10,
+        showCursor: false,
+
+        onComplete: setTimeout(function () { $('#initial-reply').css('color', 'transparent') }, 1500)
+    })
 }
 
 // initial animation end
